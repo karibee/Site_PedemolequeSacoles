@@ -93,7 +93,7 @@ export function Gallery() {
             type="button"
             onClick={close}
             aria-label="Fechar"
-            className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25"
+            className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <X />
           </button>
@@ -101,7 +101,7 @@ export function Gallery() {
             type="button"
             onClick={(e) => { e.stopPropagation(); prev(); }}
             aria-label="Imagem anterior"
-            className="absolute left-2 sm:left-6 inline-flex size-12 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25"
+            className="absolute left-2 sm:left-6 inline-flex size-12 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <ChevronLeft />
           </button>
@@ -111,7 +111,7 @@ export function Gallery() {
               alt={images[active].alt}
               className="max-h-[80vh] w-auto rounded-2xl object-contain"
             />
-            <figcaption className="mt-3 text-center text-sm text-white/80">
+            <figcaption className="mt-3 text-center text-sm text-background/80">
               {images[active].alt}
             </figcaption>
           </figure>
@@ -119,7 +119,7 @@ export function Gallery() {
             type="button"
             onClick={(e) => { e.stopPropagation(); next(); }}
             aria-label="Próxima imagem"
-            className="absolute right-2 sm:right-6 inline-flex size-12 items-center justify-center rounded-full bg-white/15 text-white hover:bg-white/25"
+            className="absolute right-2 sm:right-6 inline-flex size-12 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <ChevronRight />
           </button>

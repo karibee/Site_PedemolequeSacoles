@@ -37,50 +37,50 @@
   --font-display: "Fraunces", "Georgia", serif;
   --font-sans: "Nunito", "Inter", system-ui, sans-serif;
 
-  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 25%, transparent);
-  --shadow-card: 0 8px 24px -10px color-mix(in oklab, var(--leaf) 35%, transparent);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 28%, transparent);
+  --shadow-card: 0 8px 24px -10px color-mix(in oklab, var(--foreground) 18%, transparent);
 }
 
 :root {
   --radius: 1rem;
 
   /* Sand / cream background */
-  --background: oklch(0.98 0.02 85);
-  --foreground: oklch(0.25 0.04 60);
+  --background: #f3eac0;
+  --foreground: #000000;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.04 60);
+  --card: #f8f1d2;
+  --card-foreground: #000000;
 
   /* Tropical orange — primary brand */
-  --primary: oklch(0.72 0.19 50);
-  --primary-foreground: oklch(0.99 0.01 85);
+  --primary: #ff914d;
+  --primary-foreground: #000000;
 
   /* Sunshine yellow */
-  --secondary: oklch(0.88 0.16 95);
-  --secondary-foreground: oklch(0.28 0.06 60);
+  --secondary: #f3eac0;
+  --secondary-foreground: #000000;
 
-  --muted: oklch(0.95 0.02 85);
-  --muted-foreground: oklch(0.5 0.03 60);
+  --muted: #f7efcf;
+  --muted-foreground: color-mix(in oklab, #000000 68%, #f3eac0);
 
   /* Soft accent */
-  --accent: oklch(0.93 0.05 80);
-  --accent-foreground: oklch(0.28 0.06 60);
+  --accent: color-mix(in oklab, #ff914d 18%, #f3eac0);
+  --accent-foreground: #000000;
 
   /* Tropical pink/coral for highlights */
-  --tropical: oklch(0.7 0.2 20);
-  --tropical-foreground: oklch(0.99 0.01 85);
+  --tropical: color-mix(in oklab, #ff914d 82%, #000000);
+  --tropical-foreground: #000000;
 
   /* Soft tropical green */
-  --leaf: oklch(0.72 0.13 155);
-  --leaf-foreground: oklch(0.2 0.04 155);
+  --leaf: color-mix(in oklab, #ff914d 65%, #000000);
+  --leaf-foreground: #f3eac0;
 
-  --sand: oklch(0.94 0.04 85);
+  --sand: color-mix(in oklab, #f3eac0 94%, #ff914d);
 
-  --whatsapp: oklch(0.65 0.16 150);
-  --whatsapp-foreground: oklch(1 0 0);
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #000000;
 
-  --border: oklch(0.9 0.02 85);
-  --ring: oklch(0.72 0.19 50);
+  --border: color-mix(in oklab, #000000 14%, #f3eac0);
+  --ring: #ff914d;
 }
 
 @layer base {
@@ -152,12 +152,23 @@
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   border-radius: 9999px;
+
   background: transparent;
-  color: var(--color-primary-foreground);
+
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+
   font-weight: 700;
-  border: 2px solid var(--color-primary-foreground);
   min-height: 44px;
-  transition: background 200ms ease;
-  &:hover { background: color-mix(in oklab, white 15%, transparent); }
-  &:focus-visible { outline: 2px solid var(--color-primary-foreground); outline-offset: 3px; }
+  transition: all 200ms ease;
+
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
 }
