@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { BrandMonogram } from "./BrandMonogram";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { site, buildWhatsappLink, navigationLinks, socialLinks } from "@/data/site";
 
@@ -27,7 +28,9 @@ export function Navbar() {
         className="container-page flex items-center justify-between py-3"
       >
         <a href="#topo" className="flex items-center gap-2 group" aria-label={`${site.brand} - início`}>
-          <span aria-hidden className="text-3xl">{site.icon}</span>
+          <span aria-hidden className="text-3xl">
+            <BrandMonogram className="size-[1em]" />
+          </span>
           <span className="font-display text-lg sm:text-xl font-bold text-foreground leading-tight">
             {site.brand}
           </span>

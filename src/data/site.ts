@@ -8,7 +8,6 @@ import morango from "@/assets/images/p-morango.jpg";
 export const site = {
   brand: "Pedemoleque Sacolés",
   tagline: "Sacolés artesanais",
-  icon: "🍧",
   whatsappNumber: "5511999999999", // troque pelo número real
   instagram: "https://instagram.com/pedemolequesacoles",
   whatsappMessage: "Olá! Gostaria de fazer um pedido dos sacolés Pedemoleque 🍧",
@@ -71,7 +70,6 @@ export const menuContent = {
 export const aboutContent = {
   image: aboutImg,
   imageAlt: "Mãos despejando polpa de fruta tropical em tubos de sacolé",
-  badgeIcon: "🥭",
   eyebrow: "Sobre a marca",
   title: "Um pedacinho de verão em cada sacolé.",
   descriptionPrefix: "A ",

@@ -1,4 +1,5 @@
 import { aboutContent } from "@/data/site";
+import { HandmadeSeal } from "./HandmadeSeal";
 
 export function About() {
   return (
@@ -17,7 +18,7 @@ export function About() {
             aria-hidden
             className="absolute -bottom-4 -right-4 hidden sm:flex size-32 items-center justify-center rounded-full bg-secondary text-5xl shadow-soft rotate-6"
           >
-            {aboutContent.badgeIcon}
+            <HandmadeSeal className="size-28" />
           </div>
         </div>
 

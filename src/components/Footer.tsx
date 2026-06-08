@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { BrandMonogram } from "./BrandMonogram";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { site, buildWhatsappLink, footerContent, navigationLinks, socialLinks } from "@/data/site";
 
@@ -8,7 +9,9 @@ export function Footer() {
       <div className="container-page py-14 grid gap-10 md:grid-cols-3 md:items-start">
         <div>
           <div className="flex items-center gap-2">
-            <span aria-hidden className="text-3xl">{site.icon}</span>
+            <span aria-hidden className="text-3xl">
+              <BrandMonogram className="size-[1em]" />
+            </span>
             <p className="font-display text-xl font-bold">{site.brand}</p>
           </div>
           <p className="mt-3 text-sm text-background/70 max-w-xs">
