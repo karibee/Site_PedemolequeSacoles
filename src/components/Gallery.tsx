@@ -1,32 +1,19 @@
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import g1 from "@/assets/images/gallery-1.jpg";
-import g2 from "@/assets/images/gallery-2.jpg";
-import hero from "@/assets/images/hero.jpg";
-import cta from "@/assets/images/cta.jpg";
-import about from "@/assets/images/about.jpg";
-import morango from "@/assets/images/p-morango.jpg";
-
-const images = [
-  { src: g1, alt: "Criança feliz segurando sacolé na praia" },
-  { src: cta, alt: "Sacolés coloridos sobre o gelo" },
-  { src: g2, alt: "Cooler cheio de sacolés gelados" },
-  { src: about, alt: "Preparação artesanal dos sacolés" },
-  { src: hero, alt: "Sacolés em cenário tropical" },
-  { src: morango, alt: "Sacolé de morango com frutas frescas" },
-];
+import { galleryContent } from "@/data/site";
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+  const { images } = galleryContent;
 
   const close = useCallback(() => setActive(null), []);
   const prev = useCallback(
     () => setActive((i) => (i === null ? null : (i - 1 + images.length) % images.length)),
-    [],
+    [images.length],
   );
   const next = useCallback(
     () => setActive((i) => (i === null ? null : (i + 1) % images.length)),
-    [],
+    [images.length],
   );
 
   useEffect(() => {
@@ -49,10 +36,10 @@ export function Gallery() {
       <div className="container-page">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-sm font-bold uppercase tracking-wider text-primary">
-            Galeria
+            {galleryContent.eyebrow}
           </span>
           <h2 className="mt-2 font-display text-3xl sm:text-5xl font-bold text-foreground">
-            O verão nas suas mãos.
+            {galleryContent.title}
           </h2>
         </div>
 
@@ -62,7 +49,7 @@ export function Gallery() {
               <button
                 type="button"
                 onClick={() => setActive(i)}
-                aria-label={`Abrir imagem: ${img.alt}`}
+                aria-label={`${galleryContent.openImageLabelPrefix} ${img.alt}`}
                 className="group relative block size-full overflow-hidden rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
               >
                 <img
@@ -85,14 +72,14 @@ export function Gallery() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Visualização da galeria"
+          aria-label={galleryContent.dialogLabel}
           className="fixed inset-0 z-[60] flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
           onClick={close}
         >
           <button
             type="button"
             onClick={close}
-            aria-label="Fechar"
+            aria-label={galleryContent.closeLabel}
             className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <X />
@@ -100,7 +87,7 @@ export function Gallery() {
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); prev(); }}
-            aria-label="Imagem anterior"
+            aria-label={galleryContent.previousLabel}
             className="absolute left-2 sm:left-6 inline-flex size-12 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <ChevronLeft />
@@ -118,7 +105,7 @@ export function Gallery() {
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); next(); }}
-            aria-label="Próxima imagem"
+            aria-label={galleryContent.nextLabel}
             className="absolute right-2 sm:right-6 inline-flex size-12 items-center justify-center rounded-full bg-background/15 text-background hover:bg-background/25"
           >
             <ChevronRight />

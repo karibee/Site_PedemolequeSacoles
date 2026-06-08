@@ -1,4 +1,5 @@
 import { products } from "@/data/products";
+import { menuContent } from "@/data/site";
 import { ProductCard } from "./ProductCard";
 
 export function Menu() {
@@ -7,14 +8,13 @@ export function Menu() {
       <div className="container-page">
         <div className="max-w-2xl">
           <span className="text-sm font-bold uppercase tracking-wider text-primary">
-            Cardápio
+            {menuContent.eyebrow}
           </span>
           <h2 className="mt-2 font-display text-3xl sm:text-5xl font-bold text-foreground">
-            Sabores que abraçam o calor.
+            {menuContent.title}
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
-            Todos feitos com polpa fresca, sem conservantes. Escolha o seu favorito
-            e peça direto pelo WhatsApp.
+            {menuContent.description}
           </p>
         </div>
 

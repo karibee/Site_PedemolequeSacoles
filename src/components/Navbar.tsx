@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { site, buildWhatsappLink } from "@/data/site";
-
-const links = [
-  { href: "#cardapio", label: "Cardápio" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#avaliacoes", label: "Avaliações" },
-  { href: "#galeria", label: "Galeria" },
-];
+import { site, buildWhatsappLink, navigationLinks, socialLinks } from "@/data/site";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,14 +27,14 @@ export function Navbar() {
         className="container-page flex items-center justify-between py-3"
       >
         <a href="#topo" className="flex items-center gap-2 group" aria-label={`${site.brand} - início`}>
-          <span aria-hidden className="text-3xl">🍧</span>
+          <span aria-hidden className="text-3xl">{site.icon}</span>
           <span className="font-display text-lg sm:text-xl font-bold text-foreground leading-tight">
             {site.brand}
           </span>
         </a>
 
         <ul className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
+          {navigationLinks.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
@@ -56,7 +49,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <a href={buildWhatsappLink()} target="_blank" rel="noreferrer" className="btn-whatsapp text-sm">
             <WhatsAppIcon className="size-5" />
-            <span>WhatsApp</span>
+            <span>{socialLinks.whatsapp.label}</span>
           </a>
         </div>
 
@@ -78,7 +71,7 @@ export function Navbar() {
           className="md:hidden container-page pb-4"
         >
           <ul className="flex flex-col gap-1 rounded-2xl bg-card p-3 shadow-card">
-            {links.map((l) => (
+            {navigationLinks.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
@@ -97,7 +90,7 @@ export function Navbar() {
                 className="btn-whatsapp w-full"
               >
                 <WhatsAppIcon className="size-5" />
-                <span>Pedir pelo WhatsApp</span>
+                <span>{socialLinks.whatsapp.orderLabel}</span>
               </a>
             </li>
           </ul>

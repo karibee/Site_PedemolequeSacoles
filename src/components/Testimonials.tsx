@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { testimonials } from "@/data/site";
+import { testimonials, testimonialsContent } from "@/data/site";
 
 export function Testimonials() {
   return (
@@ -7,10 +7,10 @@ export function Testimonials() {
       <div className="container-page">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-sm font-bold uppercase tracking-wider text-primary">
-            Avaliações
+            {testimonialsContent.eyebrow}
           </span>
           <h2 className="mt-2 font-display text-3xl sm:text-5xl font-bold text-foreground">
-            Quem prova, volta sempre.
+            {testimonialsContent.title}
           </h2>
         </div>
 
@@ -20,7 +20,7 @@ export function Testimonials() {
               key={t.name}
               className="rounded-3xl bg-card p-7 shadow-card border border-border/60 flex flex-col"
             >
-              <div className="flex gap-1 text-secondary-foreground" aria-label="5 estrelas">
+              <div className="flex gap-1 text-secondary-foreground" aria-label={testimonialsContent.ratingLabel}>
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-4 fill-secondary text-secondary" aria-hidden />
                 ))}

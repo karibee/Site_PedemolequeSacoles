@@ -1,12 +1,11 @@
-import ctaImg from "@/assets/images/cta.jpg";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { buildWhatsappLink } from "@/data/site";
+import { buildWhatsappLink, ctaContent } from "@/data/site";
 
 export function CTA() {
   return (
-    <section aria-labelledby="cta-title" className="relative overflow-hidden">
+    <section aria-labelledby={ctaContent.titleId} className="relative overflow-hidden">
       <img
-        src={ctaImg}
+        src={ctaContent.image}
         alt=""
         width={1920}
         height={1080}
@@ -17,14 +16,13 @@ export function CTA() {
 
       <div className="container-page relative z-10 py-24 sm:py-32 text-center text-background">
         <span className="inline-flex rounded-full bg-secondary px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-secondary-foreground">
-          Bora refrescar?
+          {ctaContent.eyebrow}
         </span>
-        <h2 id="cta-title" className="mt-5 font-display text-4xl sm:text-6xl font-bold max-w-3xl mx-auto leading-tight">
-          O verão chega antes quando você pede um <span className="text-secondary">Pedemoleque</span>.
+        <h2 id={ctaContent.titleId} className="mt-5 font-display text-4xl sm:text-6xl font-bold max-w-3xl mx-auto leading-tight">
+          {ctaContent.titlePrefix}<span className="text-secondary">{ctaContent.titleHighlight}</span>{ctaContent.titleSuffix}
         </h2>
         <p className="mt-5 text-lg text-background/90 max-w-xl mx-auto">
-          Faça seu pedido agora pelo WhatsApp e receba os sacolés gelados,
-          prontos pra adoçar o seu dia.
+          {ctaContent.description}
         </p>
         <div className="mt-8 flex justify-center">
           <a
@@ -34,7 +32,7 @@ export function CTA() {
             className="btn-whatsapp text-base px-8 py-4"
           >
             <WhatsAppIcon className="size-6" />
-            Pedir pelo WhatsApp
+            {ctaContent.buttonLabel}
           </a>
         </div>
       </div>

@@ -1,15 +1,13 @@
 import type { Product } from "@/data/products";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import { buildWhatsappLink } from "@/data/site";
+import { buildProductWhatsappMessage, buildWhatsappLink, socialLinks } from "@/data/site";
 
 interface Props {
   product: Product;
 }
 
 export function ProductCard({ product }: Props) {
-  const link = buildWhatsappLink(
-    `Olá! Quero pedir o sacolé de ${product.name} (${product.price}) 🍧`,
-  );
+  const link = buildWhatsappLink(buildProductWhatsappMessage(product.name, product.price));
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-3xl bg-card shadow-card border border-border/60 transition-all hover:-translate-y-1 hover:shadow-soft">
@@ -46,7 +44,7 @@ export function ProductCard({ product }: Props) {
           className="btn-whatsapp mt-5 text-sm"
         >
           <WhatsAppIcon className="size-4" />
-          Pedir agora
+          {socialLinks.whatsapp.productOrderLabel}
         </a>
       </div>
     </article>
