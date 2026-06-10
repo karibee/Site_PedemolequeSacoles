@@ -1,15 +1,17 @@
-import aboutImg from "@/assets/images/about.jpg";
-import ctaImg from "@/assets/images/cta.jpg";
+import aboutImg from "@/assets/images/morango-abt.jpg";
+import ctaImg from "@/assets/images/cta-AeV_praia.jpg";
 import g1 from "@/assets/images/gallery-1.jpg";
 import g2 from "@/assets/images/gallery-2.jpg";
-import heroImg from "@/assets/images/hero.jpg";
-import morango from "@/assets/images/p-morango.jpg";
+import g3 from "@/assets/images/gallery-3.jpg";
+import g4 from "@/assets/images/gallery-4.jpg";
+import g5 from "@/assets/images/gallery-5.jpg";
+import heroImg from "@/assets/images/hero-sec.png";
 
 export const site = {
   brand: "Pedemoleque Sacolés",
   tagline: "Sacolés artesanais",
-  whatsappNumber: "5511999999999", // troque pelo número real
-  instagram: "https://instagram.com/pedemolequesacoles",
+  whatsappNumber: "5521984845936",
+  instagram: "https://instagram.com/andreia_sacoles",
   whatsappMessage: "Olá! Gostaria de fazer um pedido dos sacolés Pedemoleque 🍧",
 };
 
@@ -146,12 +148,14 @@ export const galleryContent = {
   nextLabel: "Próxima imagem",
   openImageLabelPrefix: "Abrir imagem:",
   images: [
-    { src: g1, alt: "Criança feliz segurando sacolé na praia" },
-    { src: ctaImg, alt: "Sacolés coloridos sobre o gelo" },
-    { src: g2, alt: "Cooler cheio de sacolés gelados" },
+    { src: g1, alt: "Praia de Figueira" },
+    { src: ctaImg, alt: "Vendendo na praia de Figueira" },
+    { src: g2, alt: "Carrinho de sacolés na praia de Figueira" },
     { src: aboutImg, alt: "Preparação artesanal dos sacolés" },
-    { src: heroImg, alt: "Sacolés em cenário tropical" },
-    { src: morango, alt: "Sacolé de morango com frutas frescas" },
+    { src: heroImg, alt: "Sacolés em cenário tropical (Gerado por IA)" },
+    { src: g3, alt: "Por do sol na lagoa de Figueira" },
+    { src: g4, alt: "Sacolé de morango com nutella" },
+    { src: g5, alt: "Menção nos stories de cliente" }
   ],
 };
 
