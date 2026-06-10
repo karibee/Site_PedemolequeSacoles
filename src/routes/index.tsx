@@ -8,25 +8,34 @@ import { Testimonials } from "@/components/Testimonials";
 import { Gallery } from "@/components/Gallery";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
+import { seo, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pedemoleque Sacolés — Sacolés artesanais de fruta" },
+      { title: seo.home.title },
       {
         name: "description",
-        content:
-          "Sacolés artesanais feitos com polpa de fruta fresca. Sabores tropicais, sem conservantes. Peça pelo WhatsApp.",
+        content: seo.home.description,
       },
-      { property: "og:title", content: "Pedemoleque Sacolés — Sacolés artesanais de fruta" },
+      { name: "keywords", content: seo.keywords },
+      { name: "author", content: seo.author },
+      { property: "og:title", content: seo.home.ogTitle },
       {
         property: "og:description",
-        content:
-          "Frescor de verão em cada mordida. Maracujá, coco, manga, açaí e muito mais — feitos à mão.",
+        content: seo.home.ogDescription,
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: seo.canonicalUrl },
+      { property: "og:site_name", content: site.brand },
+      { property: "og:image", content: seo.ogImage },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: seo.home.ogTitle },
+      { name: "twitter:description", content: seo.home.ogDescription },
+      { name: "twitter:image", content: seo.ogImage },
     ],
     links: [
+      { rel: "canonical", href: seo.canonicalUrl },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

@@ -9,11 +9,15 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 
-import { site } from "@/data/site";
+import { integrations, seo, site } from "@/data/site";
 import appCss from "../styles.css?url";
 
-const defaultDescription =
-  "Sacolés artesanais feitos com polpa de fruta fresca. Peça pelo WhatsApp.";
+const googleTagScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${integrations.googleAdsId}');
+`;
 
 function NotFoundComponent() {
   return (
@@ -77,15 +81,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: site.brand },
-      { name: "description", content: defaultDescription },
-      { name: "author", content: site.brand },
-      { property: "og:title", content: site.brand },
-      { property: "og:description", content: defaultDescription },
+      { title: seo.title },
+      { name: "description", content: seo.description },
+      { name: "keywords", content: seo.keywords },
+      { name: "author", content: seo.author },
+      {
+        name: "google-site-verification",
+        content: integrations.googleSiteVerification,
+      },
+      { property: "og:title", content: seo.title },
+      { property: "og:description", content: seo.description },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: site.brand },
-      { name: "twitter:description", content: defaultDescription },
+      { property: "og:url", content: seo.canonicalUrl },
+      { property: "og:site_name", content: site.brand },
+      { property: "og:image", content: seo.ogImage },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: seo.title },
+      { name: "twitter:description", content: seo.description },
+      { name: "twitter:image", content: seo.ogImage },
     ],
     links: [
       {
@@ -116,6 +129,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${integrations.googleAdsId}`}
+        />
+        <script dangerouslySetInnerHTML={{ __html: googleTagScript }} />
       </head>
       <body>
         {children}

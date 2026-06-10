@@ -10,10 +10,35 @@ import g7 from "@/assets/images/gallery-7.png";
 import heroImg from "@/assets/images/hero-sec.jpg";
 
 export const site = {
+  url: "https://pedemolequesacoles.netlify.app/",
   brand: "Pedemoleque Sacolés",
   whatsappNumber: "5521984845936",
   instagram: "https://instagram.com/andreia_sacoles",
   whatsappMessage: "Olá! Gostaria de fazer um pedido dos sacolés Pedemoleque 🍧",
+};
+
+export const integrations = {
+  googleAdsId: "AW-17722458846",
+  googleSiteVerification: "LPCtnlex6JJxMChjYR-E9hh_aMMbySvJ2uQxY5VGlU8",
+};
+
+export const seo = {
+  title: "Pedemoleque Sacolés | Sacolés artesanais na Região dos Lagos",
+  description:
+    "Pedemoleque Sacolés prepara sacolés artesanais com frutas naturais, produção artesanal e sabor de verão para praia, Arraial do Cabo e Região dos Lagos.",
+  keywords:
+    "Pedemoleque Sacolés, sacolés artesanais, sacolé artesanal, frutas naturais, produção artesanal, praia, Arraial do Cabo, Região dos Lagos, sacolés na praia",
+  author: site.brand,
+  canonicalUrl: site.url,
+  ogImage: `${site.url}logo_pedemoleque.png`,
+  home: {
+    title: "Pedemoleque Sacolés | Sacolés artesanais em Arraial do Cabo",
+    description:
+      "Sacolés artesanais feitos com frutas naturais, cuidado em pequenas levas e sabor de verão para praia, Arraial do Cabo e Região dos Lagos. Peça pelo WhatsApp.",
+    ogTitle: "Pedemoleque Sacolés | Sacolés artesanais com frutas naturais",
+    ogDescription:
+      "Conheça os sacolés artesanais da Pedemoleque Sacolés: fruta de verdade, produção artesanal e frescor para curtir na praia e na Região dos Lagos.",
+  },
 };
 
 export const buildWhatsappLink = (message?: string) =>
@@ -129,20 +154,17 @@ export const testimonials = [
   {
     name: "Andréia R.",
     role: "Cliente desde 2022",
-    quote:
-      "O melhor sacolé que já provei. Dá pra sentir o sabor da fruta de verdade.",
+    quote: "O melhor sacolé que já provei. Dá pra sentir o sabor da fruta de verdade.",
   },
   {
     name: "Rafael T.",
     role: "Veranista",
-    quote:
-      "Fizemos a encomenda pra galera aqui, e todo mundo elogiou.",
+    quote: "Fizemos a encomenda pra galera aqui, e todo mundo elogiou.",
   },
   {
     name: "Juliana M.",
     role: "Vizinha de bairro",
-    quote:
-      "Atendimento impecável pelo WhatsApp, entregam rapidinho. Recomendo demais!",
+    quote: "Atendimento impecável pelo WhatsApp, entregam rapidinho. Recomendo demais!",
   },
 ];
 
