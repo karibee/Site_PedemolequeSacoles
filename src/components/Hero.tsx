@@ -3,7 +3,7 @@ import { buildWhatsappLink, heroContent } from "@/data/site";
 
 export function Hero() {
   return (
-    <section id="topo" className="relative min-h-dvh flex items-center overflow-hidden">
+    <section id="topo" className="relative min-h-svh flex items-center overflow-hidden">
       <img
         src={heroContent.image}
         alt=""
