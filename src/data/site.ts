@@ -4,12 +4,11 @@ import g1 from "@/assets/images/gallery-1.jpg";
 import g2 from "@/assets/images/gallery-2.jpg";
 import g3 from "@/assets/images/gallery-3.jpg";
 import g4 from "@/assets/images/gallery-4.jpg";
-import g5 from "@/assets/images/gallery-5.jpg";
-import heroImg from "@/assets/images/hero-sec.png";
+import g5 from "@/assets/images/gallery-5.webp";
+import heroImg from "@/assets/images/hero-sec.jpg";
 
 export const site = {
   brand: "Pedemoleque Sacolés",
-  tagline: "Sacolés artesanais",
   whatsappNumber: "5521984845936",
   instagram: "https://instagram.com/andreia_sacoles",
   whatsappMessage: "Olá! Gostaria de fazer um pedido dos sacolés Pedemoleque 🍧",
@@ -80,14 +79,22 @@ export const aboutContent = {
     " nasceu no quintal de casa, com frutas colhidas do pé e a vontade de devolver às pessoas aquele sabor de infância. Hoje, levamos o frescor do verão para a sua casa, sua festa e seu dia a dia — feitos um a um, do nosso jeito.",
   valuesTitle: "Nossos valores",
   values: [
-    { title: "Fruta de verdade", text: "Selecionamos polpas frescas, sem corantes nem conservantes." },
-    { title: "Receita de família", text: "Cada sabor nasce da cozinha da vó, com tempo e carinho." },
-    { title: "Cuidado em cada etapa", text: "Do preparo ao congelamento, tudo é feito em pequenas levas." },
+    {
+      title: "Fruta de verdade",
+      text: "Selecionamos polpas frescas, sem corantes nem conservantes.",
+    },
+    {
+      title: "Receita de família",
+      text: "Cada sabor nasce da cozinha da vó, com tempo e carinho.",
+    },
+    {
+      title: "Cuidado em cada etapa",
+      text: "Do preparo ao congelamento, tudo é feito em pequenas levas.",
+    },
   ],
   mission: {
     eyebrow: "Missão",
-    text:
-      "Refrescar momentos com sabor de verdade, do jeito artesanal que só quem ama o que faz consegue entregar.",
+    text: "Refrescar momentos com sabor de verdade, do jeito artesanal que só quem ama o que faz consegue entregar.",
   },
 };
 
@@ -101,14 +108,12 @@ export const highlights = [
   {
     icon: "🌴",
     title: "Sabores Tropicais",
-    description:
-      "Maracujá, coco, manga, açaí e muito mais — a fruta in natura no centro de tudo.",
+    description: "Maracujá, coco, manga, açaí e muito mais — a fruta in natura no centro de tudo.",
   },
   {
     icon: "💬",
     title: "Pedido pelo WhatsApp",
-    description:
-      "Atendimento direto, rápido e sem complicação. Escolha, peça e receba geladinho.",
+    description: "Atendimento direto, rápido e sem complicação. Escolha, peça e receba geladinho.",
   },
 ];
 
@@ -155,7 +160,7 @@ export const galleryContent = {
     { src: heroImg, alt: "Sacolés em cenário tropical (Gerado por IA)" },
     { src: g3, alt: "Por do sol na lagoa de Figueira" },
     { src: g4, alt: "Sacolé de morango com nutella" },
-    { src: g5, alt: "Menção nos stories de cliente" }
+    { src: g5, alt: "Menção nos stories de cliente" },
   ],
 };
 
