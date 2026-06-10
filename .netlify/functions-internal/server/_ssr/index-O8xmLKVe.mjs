@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
-import { s as site, n as navigationLinks, a as socialLinks, b as buildWhatsappLink, h as heroContent, c as highlights, m as menuContent, e as aboutContent, t as testimonialsContent, f as testimonials, g as galleryContent, i as ctaContent, j as footerContent, d as buildProductWhatsappMessage } from "./router-IYgWcDmG.mjs";
+import { s as site, n as navigationLinks, a as socialLinks, b as buildWhatsappLink, h as heroContent, c as highlights, m as menuContent, e as aboutContent, t as testimonialsContent, f as testimonials, g as galleryContent, i as ctaContent, j as footerContent, d as buildProductWhatsappMessage } from "./router-9dy85AfG.mjs";
 import { X, M as Menu$1, S as Star, C as ChevronLeft, a as ChevronRight, I as Instagram } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";
 import "../_libs/tanstack__react-query.mjs";
@@ -62,7 +62,10 @@ function Navbar() {
   const [scrolled, setScrolled] = reactExports.useState(false);
   const [open, setOpen] = reactExports.useState(false);
   reactExports.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const nextScrolled = window.scrollY > 80;
+      setScrolled((current) => current === nextScrolled ? current : nextScrolled);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -70,7 +73,7 @@ function Navbar() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "header",
     {
-      className: `fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_2px_20px_-12px_rgba(0,0,0,0.2)]" : "bg-transparent"}`,
+      className: `fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-[0_2px_20px_-12px_rgba(0,0,0,0.2)]" : "bg-transparent"}`,
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "nav",

@@ -198,7 +198,7 @@ const footerContent = {
   contactTitle: "Fale com a gente",
   copyrightSuffix: "Todos os direitos reservados."
 };
-const appCss = "/assets/styles-DuLgcqj_.css";
+const appCss = "/assets/styles-63cnR-eb.css";
 const googleTagScript = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -319,7 +319,7 @@ function RootComponent() {
   const { queryClient } = Route$1.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter = () => import("./index-DRZXkaIv.mjs");
+const $$splitComponentImporter = () => import("./index-O8xmLKVe.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
