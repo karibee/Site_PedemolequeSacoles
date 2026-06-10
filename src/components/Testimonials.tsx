@@ -20,9 +20,9 @@ export function Testimonials() {
               key={t.name}
               className="rounded-3xl bg-card p-7 shadow-card border border-border/60 flex flex-col"
             >
-              <div className="flex gap-1 text-secondary-foreground" aria-label={testimonialsContent.ratingLabel}>
+              <div className="flex gap-1" aria-label={testimonialsContent.ratingLabel}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-4 fill-secondary text-secondary" aria-hidden />
+                  <Star key={i} className="size-4 fill-[#FACC15] text-[#FACC15]" aria-hidden />
                 ))}
               </div>
               <blockquote className="mt-4 flex-1 text-foreground leading-relaxed">

@@ -29,7 +29,7 @@ export const products: Product[] = [
   {
     id: "limao",
     name: "Limão ao Leite",
-    description: "Suco de limão natural com creme de leite, suave e refrescante.",
+    description: "Suco de limão natural, suave e refrescante.",
     price: "R$ 8,00",
     image: limao,
   },

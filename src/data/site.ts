@@ -1,10 +1,12 @@
-import aboutImg from "@/assets/images/morango-abt.jpg";
+import aboutImg from "/public/logo_pedemoleque.png";
 import ctaImg from "@/assets/images/cta-AeV_praia.jpg";
 import g1 from "@/assets/images/gallery-1.jpg";
 import g2 from "@/assets/images/gallery-2.jpg";
 import g3 from "@/assets/images/gallery-3.jpg";
 import g4 from "@/assets/images/gallery-4.jpg";
 import g5 from "@/assets/images/gallery-5.webp";
+import g6 from "@/assets/images/gallery-6.jpg";
+import g7 from "@/assets/images/gallery-7.png";
 import heroImg from "@/assets/images/hero-sec.jpg";
 
 export const site = {
@@ -51,7 +53,7 @@ export const heroContent = {
   titleHighlight: "refresca",
   titleSuffix: " o seu dia.",
   description:
-    "Polpa de fruta fresca, receita de família e aquele friozinho gostoso de quando o verão chega. Feitos com carinho, entregues com pressa.",
+    "Polpa de fruta fresca, oferecendo aquele geladinho gostoso de quando o verão chega. Feitos com carinho, entregues com pressa.",
   primaryCta: {
     href: "#cardapio",
     label: "Ver Cardápio",
@@ -76,20 +78,20 @@ export const aboutContent = {
   descriptionPrefix: "A ",
   descriptionBrand: site.brand,
   descriptionSuffix:
-    " nasceu no quintal de casa, com frutas colhidas do pé e a vontade de devolver às pessoas aquele sabor de infância. Hoje, levamos o frescor do verão para a sua casa, sua festa e seu dia a dia — feitos um a um, do nosso jeito.",
+    " nasceu no quintal de casa, usando realmente a fruta verdadeira com a vontade de devolver às pessoas aquele sabor natural, fugindo dos ingredientes industrializados. Hoje, levamos o frescor do verão para a sua casa, sua festa e seu dia a dia, feitos um a um, do nosso jeito.",
   valuesTitle: "Nossos valores",
   values: [
     {
       title: "Fruta de verdade",
-      text: "Selecionamos polpas frescas, sem corantes nem conservantes.",
+      text: "Selecionamos polpas frescas e ingredientes de qualidade, sem corantes nem conservantes.",
     },
     {
-      title: "Receita de família",
-      text: "Cada sabor nasce da cozinha da vó, com tempo e carinho.",
+      title: "Sabor mais natural",
+      text: "Valorizamos sabores mais naturais, com menos artificialidade e mais proximidade com os ingredientes de verdade..",
     },
     {
       title: "Cuidado em cada etapa",
-      text: "Do preparo ao congelamento, tudo é feito em pequenas levas.",
+      text: "Do preparo ao congelamento, tudo é feito em pequenas levas, com atenção aos detalhes.",
     },
   ],
   mission: {
@@ -108,7 +110,7 @@ export const highlights = [
   {
     icon: "🌴",
     title: "Sabores Tropicais",
-    description: "Maracujá, coco, manga, açaí e muito mais — a fruta in natura no centro de tudo.",
+    description: "Maracujá, coco, manga, banana e muito mais. A fruta in natura no centro de tudo.",
   },
   {
     icon: "💬",
@@ -125,22 +127,22 @@ export const testimonialsContent = {
 
 export const testimonials = [
   {
-    name: "Mariana S.",
+    name: "Andréia R.",
     role: "Cliente desde 2022",
     quote:
-      "O melhor sacolé que já provei. Dá pra sentir o sabor da fruta de verdade, parece feito em casa pela minha avó.",
+      "O melhor sacolé que já provei. Dá pra sentir o sabor da fruta de verdade.",
   },
   {
     name: "Rafael T.",
-    role: "Festa de aniversário",
+    role: "Veranista",
     quote:
-      "Fizemos a encomenda pra festa do meu filho e foi um sucesso. Todo mundo elogiou o sabor e a apresentação.",
+      "Fizemos a encomenda pra galera aqui, e todo mundo elogiou.",
   },
   {
     name: "Juliana M.",
     role: "Vizinha de bairro",
     quote:
-      "Atendimento impecável pelo WhatsApp, entregam rapidinho e sempre congeladinho. Recomendo demais!",
+      "Atendimento impecável pelo WhatsApp, entregam rapidinho. Recomendo demais!",
   },
 ];
 
@@ -161,6 +163,8 @@ export const galleryContent = {
     { src: g3, alt: "Por do sol na lagoa de Figueira" },
     { src: g4, alt: "Sacolé de morango com nutella" },
     { src: g5, alt: "Menção nos stories de cliente" },
+    { src: g6, alt: "Morango utilizado na produção dos sacolés" },
+    { src: g7, alt: "Sacolé de Banana Caramelizada" },
   ],
 };
 
