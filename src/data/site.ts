@@ -23,21 +23,29 @@ export const integrations = {
 };
 
 export const seo = {
-  title: "Pedemoleque Sacolés | Sacolés artesanais na Região dos Lagos",
+  title: "Pedemoleque Sacolés — Sacolés Artesanais em Arraial do Cabo | RJ",
   description:
-    "Pedemoleque Sacolés prepara sacolés artesanais com frutas naturais, produção artesanal e sabor de verão para praia, Arraial do Cabo e Região dos Lagos.",
+    "Pedemoleque Sacolés: sacolés artesanais feitos com frutas naturais em Arraial do Cabo e Região dos Lagos. Morango, maracujá, manga, chocolate e mais. Encomende pelo WhatsApp!",
   keywords:
-    "Pedemoleque Sacolés, sacolés artesanais, sacolé artesanal, frutas naturais, produção artesanal, praia, Arraial do Cabo, Região dos Lagos, sacolés na praia",
+    "Pedemoleque Sacolés, Pedemoleque, pé de moleque sacolé, pé de moleque sacoles, " +
+    "sacolé artesanal Arraial do Cabo, sacolés artesanais Região dos Lagos, " +
+    "geladinho gourmet Arraial do Cabo, sacolé delivery Arraial, " +
+    "dindin artesanal RJ, sacolé de fruta natural, sacolé gourmet praia, " +
+    "encomenda sacolé WhatsApp, geladinho artesanal, sacole arraial do cabo",
   author: site.brand,
   canonicalUrl: site.url,
   ogImage: `${site.url}logo_pedemoleque.png`,
+  ogImageWidth: "1200",
+  ogImageHeight: "1200",
+  ogImageType: "image/png",
   home: {
-    title: "Pedemoleque Sacolés | Sacolés artesanais em Arraial do Cabo",
+    title: "Pedemoleque Sacolés — Sacolés Artesanais em Arraial do Cabo | RJ",
     description:
-      "Sacolés artesanais feitos com frutas naturais, cuidado em pequenas levas e sabor de verão para praia, Arraial do Cabo e Região dos Lagos. Peça pelo WhatsApp.",
-    ogTitle: "Pedemoleque Sacolés | Sacolés artesanais com frutas naturais",
+      "Pedemoleque Sacolés: sacolés artesanais com frutas naturais em Arraial do Cabo e Região dos Lagos. Morango, maracujá, manga, chocolate e mais. Peça pelo WhatsApp!",
+    ogTitle:
+      "Pedemoleque Sacolés — Sacolés Artesanais com Frutas Naturais 🍧",
     ogDescription:
-      "Conheça os sacolés artesanais da Pedemoleque Sacolés: fruta de verdade, produção artesanal e frescor para curtir na praia e na Região dos Lagos.",
+      "Sacolés artesanais da Pedemoleque: fruta de verdade, produção artesanal e frescor de verão em Arraial do Cabo e Região dos Lagos. Encomende agora!",
   },
 };
 

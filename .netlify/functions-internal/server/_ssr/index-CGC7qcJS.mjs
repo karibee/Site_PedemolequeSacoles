@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
-import { s as site, n as navigationLinks, a as socialLinks, b as buildWhatsappLink, h as heroContent, c as highlights, m as menuContent, e as aboutContent, t as testimonialsContent, f as testimonials, g as galleryContent, i as ctaContent, j as footerContent, d as buildProductWhatsappMessage } from "./router-9dy85AfG.mjs";
+import { s as site, n as navigationLinks, a as socialLinks, b as buildWhatsappLink, h as heroContent, c as highlights, m as menuContent, e as aboutContent, t as testimonialsContent, f as testimonials, g as galleryContent, i as ctaContent, j as footerContent, d as buildProductWhatsappMessage } from "./router-CT5P9wOx.mjs";
 import { X, M as Menu$1, S as Star, C as ChevronLeft, a as ChevronRight, I as Instagram } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";
 import "../_libs/tanstack__react-query.mjs";
@@ -148,7 +148,7 @@ function Navbar() {
   );
 }
 function Hero() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "topo", className: "relative min-h-dvh flex items-center overflow-hidden", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { id: "topo", className: "relative min-h-svh flex items-center overflow-hidden", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       "img",
       {

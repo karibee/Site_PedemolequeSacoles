@@ -37,17 +37,20 @@ const integrations = {
   googleSiteVerification: "LPCtnlex6JJxMChjYR-E9hh_aMMbySvJ2uQxY5VGlU8"
 };
 const seo = {
-  title: "Pedemoleque Sacolés | Sacolés artesanais na Região dos Lagos",
-  description: "Pedemoleque Sacolés prepara sacolés artesanais com frutas naturais, produção artesanal e sabor de verão para praia, Arraial do Cabo e Região dos Lagos.",
-  keywords: "Pedemoleque Sacolés, sacolés artesanais, sacolé artesanal, frutas naturais, produção artesanal, praia, Arraial do Cabo, Região dos Lagos, sacolés na praia",
+  title: "Pedemoleque Sacolés — Sacolés Artesanais em Arraial do Cabo | RJ",
+  description: "Pedemoleque Sacolés: sacolés artesanais feitos com frutas naturais em Arraial do Cabo e Região dos Lagos. Morango, maracujá, manga, chocolate e mais. Encomende pelo WhatsApp!",
+  keywords: "Pedemoleque Sacolés, Pedemoleque, pé de moleque sacolé, pé de moleque sacoles, sacolé artesanal Arraial do Cabo, sacolés artesanais Região dos Lagos, geladinho gourmet Arraial do Cabo, sacolé delivery Arraial, dindin artesanal RJ, sacolé de fruta natural, sacolé gourmet praia, encomenda sacolé WhatsApp, geladinho artesanal, sacole arraial do cabo",
   author: site.brand,
   canonicalUrl: site.url,
   ogImage: `${site.url}logo_pedemoleque.png`,
+  ogImageWidth: "1200",
+  ogImageHeight: "1200",
+  ogImageType: "image/png",
   home: {
-    title: "Pedemoleque Sacolés | Sacolés artesanais em Arraial do Cabo",
-    description: "Sacolés artesanais feitos com frutas naturais, cuidado em pequenas levas e sabor de verão para praia, Arraial do Cabo e Região dos Lagos. Peça pelo WhatsApp.",
-    ogTitle: "Pedemoleque Sacolés | Sacolés artesanais com frutas naturais",
-    ogDescription: "Conheça os sacolés artesanais da Pedemoleque Sacolés: fruta de verdade, produção artesanal e frescor para curtir na praia e na Região dos Lagos."
+    title: "Pedemoleque Sacolés — Sacolés Artesanais em Arraial do Cabo | RJ",
+    description: "Pedemoleque Sacolés: sacolés artesanais com frutas naturais em Arraial do Cabo e Região dos Lagos. Morango, maracujá, manga, chocolate e mais. Peça pelo WhatsApp!",
+    ogTitle: "Pedemoleque Sacolés — Sacolés Artesanais com Frutas Naturais 🍧",
+    ogDescription: "Sacolés artesanais da Pedemoleque: fruta de verdade, produção artesanal e frescor de verão em Arraial do Cabo e Região dos Lagos. Encomende agora!"
   }
 };
 const buildWhatsappLink = (message) => `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(
@@ -198,7 +201,7 @@ const footerContent = {
   contactTitle: "Fale com a gente",
   copyrightSuffix: "Todos os direitos reservados."
 };
-const appCss = "/assets/styles-63cnR-eb.css";
+const appCss = "/assets/styles-DZkyK8D1.css";
 const googleTagScript = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -262,12 +265,20 @@ const Route$1 = createRootRouteWithContext()({
         name: "google-site-verification",
         content: integrations.googleSiteVerification
       },
+      { property: "og:locale", content: "pt_BR" },
       { property: "og:title", content: seo.title },
       { property: "og:description", content: seo.description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: seo.canonicalUrl },
       { property: "og:site_name", content: site.brand },
       { property: "og:image", content: seo.ogImage },
+      { property: "og:image:width", content: seo.ogImageWidth },
+      { property: "og:image:height", content: seo.ogImageHeight },
+      { property: "og:image:type", content: seo.ogImageType },
+      {
+        property: "og:image:alt",
+        content: "Logo da Pedemoleque Sacolés — sacolés artesanais"
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: seo.title },
       { name: "twitter:description", content: seo.description },
@@ -296,10 +307,49 @@ const Route$1 = createRootRouteWithContext()({
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent
 });
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${site.url}#organization`,
+  name: site.brand,
+  alternateName: ["Pé de Moleque Sacolés", "Pedemoleque"],
+  description: seo.description,
+  url: site.url,
+  telephone: "+55-21-98484-5936",
+  image: seo.ogImage,
+  logo: seo.ogImage,
+  priceRange: "R$ 8,00",
+  currenciesAccepted: "BRL",
+  paymentAccepted: "Dinheiro, Pix",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Arraial do Cabo",
+    addressRegion: "RJ",
+    addressCountry: "BR"
+  },
+  areaServed: [
+    { "@type": "City", name: "Arraial do Cabo" },
+    { "@type": "AdministrativeArea", name: "Região dos Lagos" }
+  ],
+  sameAs: [site.instagram],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+55-21-98484-5936",
+    contactType: "sales",
+    availableLanguage: "Portuguese"
+  }
+});
 function RootShell({ children }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "pt-BR", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("head", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(HeadContent, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "script",
+        {
+          type: "application/ld+json",
+          dangerouslySetInnerHTML: { __html: jsonLd }
+        }
+      ),
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         "script",
         {
@@ -319,7 +369,7 @@ function RootComponent() {
   const { queryClient } = Route$1.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter = () => import("./index-O8xmLKVe.mjs");
+const $$splitComponentImporter = () => import("./index-CGC7qcJS.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -343,6 +393,9 @@ const Route = createFileRoute("/")({
       property: "og:type",
       content: "website"
     }, {
+      property: "og:locale",
+      content: "pt_BR"
+    }, {
       property: "og:url",
       content: seo.canonicalUrl
     }, {
@@ -351,6 +404,18 @@ const Route = createFileRoute("/")({
     }, {
       property: "og:image",
       content: seo.ogImage
+    }, {
+      property: "og:image:width",
+      content: seo.ogImageWidth
+    }, {
+      property: "og:image:height",
+      content: seo.ogImageHeight
+    }, {
+      property: "og:image:type",
+      content: seo.ogImageType
+    }, {
+      property: "og:image:alt",
+      content: "Logo da Pedemoleque Sacolés — sacolés artesanais"
     }, {
       name: "twitter:card",
       content: "summary_large_image"

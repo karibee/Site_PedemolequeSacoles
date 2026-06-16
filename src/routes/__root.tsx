@@ -89,12 +89,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "google-site-verification",
         content: integrations.googleSiteVerification,
       },
+      { property: "og:locale", content: "pt_BR" },
       { property: "og:title", content: seo.title },
       { property: "og:description", content: seo.description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: seo.canonicalUrl },
       { property: "og:site_name", content: site.brand },
       { property: "og:image", content: seo.ogImage },
+      { property: "og:image:width", content: seo.ogImageWidth },
+      { property: "og:image:height", content: seo.ogImageHeight },
+      { property: "og:image:type", content: seo.ogImageType },
+      {
+        property: "og:image:alt",
+        content: "Logo da Pedemoleque Sacolés — sacolés artesanais",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: seo.title },
       { name: "twitter:description", content: seo.description },
@@ -124,11 +132,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${site.url}#organization`,
+  name: site.brand,
+  alternateName: ["Pé de Moleque Sacolés", "Pedemoleque"],
+  description: seo.description,
+  url: site.url,
+  telephone: "+55-21-98484-5936",
+  image: seo.ogImage,
+  logo: seo.ogImage,
+  priceRange: "R$ 8,00",
+  currenciesAccepted: "BRL",
+  paymentAccepted: "Dinheiro, Pix",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Arraial do Cabo",
+    addressRegion: "RJ",
+    addressCountry: "BR",
+  },
+  areaServed: [
+    { "@type": "City", name: "Arraial do Cabo" },
+    { "@type": "AdministrativeArea", name: "Região dos Lagos" },
+  ],
+  sameAs: [site.instagram],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+55-21-98484-5936",
+    contactType: "sales",
+    availableLanguage: "Portuguese",
+  },
+});
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${integrations.googleAdsId}`}
