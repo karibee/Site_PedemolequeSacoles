@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pedemolequesacoles.netlify.app/sitemap.xml
+Sitemap: https://pedemolequesacoles.netlify.app/sitemap-sacoles.xml
